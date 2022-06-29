@@ -1,5 +1,6 @@
 <?php
 
+use App\Jobs\ProcessPodcast;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // Delay Queu
+    // ProcessPodcast::dispatch()->delay(3);
+
+    //
+    ProcessPodcast::dispatch();
+
     return view('welcome');
 });
