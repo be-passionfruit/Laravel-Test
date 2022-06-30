@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CustomerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Stripe\Customer;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +21,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/', function (Request $r) {
-    return 'api.index';
-});
+/** /api */
+Route::resource('/customer', CustomerController::class);
+
+/** Authentication */
+Route::post('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
