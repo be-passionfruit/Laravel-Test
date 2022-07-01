@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     //
-    public function create(Request $r)
-    {
-        //
-    }
-
     public function register(Request $r)
     {
         //

@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Stripe\Customer;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 /** /api */
 Route::resource('/customer', CustomerController::class);
+Route::resource('/product', ProductController::class);
 
 /** Authentication */
 Route::post('/register', [AuthController::class, 'register'])->name('register');
