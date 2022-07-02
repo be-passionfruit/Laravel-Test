@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -29,3 +30,6 @@ Route::resource('/product', ProductController::class);
 /** Authentication */
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/register', [RegisterController::class, 'register']);
+
+/** Mails */
+Route::post('/subscribe', [MailController::class, 'subscribe']);
